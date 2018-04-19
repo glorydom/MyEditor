@@ -1,0 +1,28 @@
+div {
+    width: 100%;
+}
+
+.left-container {
+    padding: 2px;
+    background-color: lightblue;
+    height: 500px;
+
+    font-size: 14px;
+}
+
+.right-container {
+    padding: 2px;
+    background-color: lightblue;
+}
+
+.nav-toolbars {
+    margin: 0px auto;
+    border-bottom: 0 none !important;
+}
+
+.nav-toolbars>li>a {
+    border: 0 none !important;
+    padding: 5px 0px;
+    line-height: 26px;
+    display: inline;
+}
