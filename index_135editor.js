@@ -9,9 +9,27 @@ $(function () {
     });
 
 
-    $(".style-result").on("click", "li", function () {
-        var htmlValue = $(this).html();
-        // alert(htmlValue);
-        UE.getEditor('editor').execCommand('insertHtml', htmlValue);
-    });
+    // $(".style-result").on("click", "li", function () {
+    //     var htmlValue = $(this).html();
+    //     // alert(htmlValue);
+    //     UE.getEditor('editor').execCommand('insertHtml', htmlValue);
+    // });
+    $(".style-result").on("click", "li", applyStyle);
+
 });
+
+
+ //Ueditor编辑器里面选中内容之后，点击左侧样式，该样式将被应用在选中的内容上
+function applyStyle() {
+    var ue = UE.getEditor('editor');
+    var range = ue.selection.getRange();
+    range.select();
+    var selectedTxt = ue.selection.getText();
+    var targetNode = $(this).clone();
+    targetNode.find("p").text(selectedTxt);
+    ue.execCommand("inserthtml", targetNode.html());
+
+}
+
+
+
