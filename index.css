@@ -1,19 +1,24 @@
 div {
     width: 100%;
 }
+html, body, .container,.container>.row{
+    height:100%;
+}
 
 .left-container {
     padding: 2px;
-    background-color: lightblue;
-    height: 700px;
-
+    background-color: rgb(217, 225, 228);
+    height: 100%;
     font-size: 14px;
+}
+
+.left-container .nav-tabs li{
+    width: 100%;
 }
 
 .right-container {
     padding: 2px;
-    height: 700px;
-    background-color: lightblue;
+    background-color: rgb(218, 223, 224);
 }
 
 .nav-toolbars {
@@ -27,7 +32,41 @@ div {
     line-height: 26px;
     display: inline;
 }
+.style-result {
+    overflow-y: auto;
+    position: relative;
+    border-top: 2px solid rgb(221, 221, 221);
+    
+}
+.style-result ul{
+    padding: 0px;
+}
+.style-result ul li{
+    list-style-type: none;
+    position: relative;
+    background: #FFF;
+    border-bottom: 1px dotted #ddd;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: block;
+}
+.style-result ul li:hover{
+    background: #eee;
+}
 
-.row {
-    overflow:auto;
+.style-list{
+    margin-top: 20px;
+    position: relative;
+}
+.style-list .content{
+    height: 240px;
+    cursor: pointer;
+    padding: 0 5px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    box-shadow: 0 0 3px rgb(170, 170, 170);
+}
+
+.style-list .tools{
+    display: none;
 }

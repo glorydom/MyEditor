@@ -8,6 +8,17 @@ $(function () {
         });
     });
 
+    $("[href='#systemTemplates']").click(function () {
+
+        if (!$.trim($("#systemTemplates").html())) {
+            var url = 'http://www.135editor.com/editor_styles/systemTemplates';
+            $.get(url).then(function (data) {
+                // console.log($(data).find("#system-template-list").html());
+                var templateHtml = $(data).find("#system-template-list").html();
+                $("#systemTemplates").html(templateHtml);
+            });
+        }
+    });
 
     // $(".style-result").on("click", "li", function () {
     //     var htmlValue = $(this).html();
