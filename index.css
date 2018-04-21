@@ -1,8 +1,9 @@
 div {
     width: 100%;
 }
-html, body, .container,.container>.row{
-    height:100%;
+
+html, body, .container, .container>.row {
+    height: 100%;
 }
 
 .left-container {
@@ -12,7 +13,7 @@ html, body, .container,.container>.row{
     font-size: 14px;
 }
 
-.left-container .nav-tabs li{
+.left-container .nav-tabs li {
     width: 100%;
 }
 
@@ -32,16 +33,18 @@ html, body, .container,.container>.row{
     line-height: 26px;
     display: inline;
 }
+
 .style-result {
     overflow-y: auto;
     position: relative;
     border-top: 2px solid rgb(221, 221, 221);
-    
 }
-.style-result ul{
+
+.style-result ul {
     padding: 0px;
 }
-.style-result ul li{
+
+.style-result ul li {
     list-style-type: none;
     position: relative;
     background: #FFF;
@@ -50,15 +53,17 @@ html, body, .container,.container>.row{
     cursor: pointer;
     display: block;
 }
-.style-result ul li:hover{
+
+.style-result ul li:hover {
     background: #eee;
 }
 
-.style-list{
+.style-list {
     margin-top: 20px;
     position: relative;
 }
-.style-list .content{
+
+.style-list .content {
     height: 240px;
     cursor: pointer;
     padding: 0 5px;
@@ -67,6 +72,6 @@ html, body, .container,.container>.row{
     box-shadow: 0 0 3px rgb(170, 170, 170);
 }
 
-.style-list .tools{
+.style-list .tools {
     display: none;
 }
