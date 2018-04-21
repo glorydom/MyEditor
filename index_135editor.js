@@ -6,6 +6,7 @@ $(function () {
         var url = filterUrl + $(this).attr('data-filter');
         $.get(url).then(function (data) {
             $(".style-result").html(data);
+            $(".style-result").find("ul.editor-template-list>li>div").remove(); 
         });
     });
 
@@ -42,9 +43,10 @@ $(function () {
         range.select();
         var selectedTxt = ue.selection.getText();
         var targetNode = $(this).clone();
-        targetNode.find("p").text(selectedTxt);
+        if($.trim(selectedTxt)){
+            targetNode.find("p").text(selectedTxt);
+        }
         ue.execCommand("inserthtml", targetNode.html());
-
     }
 
     //在模板上弹出 秒刷 插入 按钮
@@ -60,7 +62,7 @@ $(function () {
         var miaoshua = $("<button class='btn'>秒刷</button>")
             .css("margin-right", "10px")
             .on("click", function () {
-                var templateContainer = $("<div style='padding:2px;'></div>")
+                var templateContainer = $("<div class='pre-scrollable' style='padding:2px;max-height:700px'></div>")
                     .addClass("tab-pane active popup-template-detail")
                     .css("background-color", "white")
                     .css("position", "absolute")
@@ -86,10 +88,8 @@ $(function () {
                         opacity: 1
                     });
                     //将image中的data-src改成src
-                    templateContainerBody$.find("[data-src]").each(function (index, entity) {
-                        var dataSrc = $(entity).attr("data-src");
-                        $(entity).attr("src", dataSrc);
-                    });
+                    filterAttr(templateContainerBody$);
+                   
                     var templateHtml = templateContainerBody$.html();
                     console.log(templateHtml);
                     templateContainer.append($(templateHtml));
@@ -104,8 +104,9 @@ $(function () {
                 var range = ue.selection.getRange();
                 range.select();
                 $.get(url).then(function (data) {
-                    // console.log($(data).find("#system-template-list").html());
-                    var templateHtml = $(data).find(".Content-body").html();
+                    var templateContentBody = $(data).find(".Content-body");
+                    filterAttr(templateContentBody);
+                    var templateHtml = templateContentBody.html();
                     ue.execCommand("inserthtml", templateHtml);
                 });
             });
@@ -136,6 +137,14 @@ $(function () {
             cache[id] = $(this).find("a[target='_blank']").attr("href");
         });
         return cache;
+    }
+
+    //某些节点的属性不被识别，对这些属性进行修改，传入的事JQuery  object
+    function filterAttr(node){
+        node.find("[data-src]").each(function (index, entity) {
+            var dataSrc = $(entity).attr("data-src");
+            $(entity).attr("src", dataSrc);
+        });
     }
 
 });
