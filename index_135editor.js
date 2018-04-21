@@ -33,6 +33,8 @@ $(function () {
     $(".style-result").on("click", "li", applyStyle);
 
 
+    
+    
 
 
 //Ueditor编辑器里面选中内容之后，点击左侧样式，该样式将被应用在选中的内容上
@@ -82,6 +84,16 @@ function popupTemplateOptions() {
             });
 
             $('#systemTemplates').append(templateContainer);
+            // 给具有_135editor的section添加监听，这样格式就能被刷到右边编辑器
+            // $("#systemTemplates").find("._135editor").each(function (){
+            //     $(this).on("click",applyStyle);
+            // });
+            //console.log($("#systemTemplates").find("section._135editor:first").html());
+            $("#systemTemplates").find("section._135editor:first").find("._135editor").each(function(){
+                console.log($(this).html());
+                $(this).click(applyStyle);
+            });
+
 
         });
     var charu = $("<button></button>")
@@ -102,6 +114,8 @@ function popupTemplateOptions() {
     $(this).append(cover);
 }
 
+
+//隐藏 秒刷 插入按钮
 function hideTemplateOptions() {
     $(this).find(".cover").remove();
 }
