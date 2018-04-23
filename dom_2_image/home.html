@@ -1,0 +1,30 @@
+
+<textarea id="my-node" onchange="dom_image()" class="abc" >
+
+</textarea>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.bundle.js"></script>
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<script src="dom-to-image.js"></script>
+<style>
+    .abc {
+        background: red;
+    }
+</style>
+<script>
+    function dom_image() {
+        var node = document.getElementById('my-node');
+
+        domtoimage.toPng(node)
+            .then(function (dataUrl) {
+                var img = new Image();
+                img.src = dataUrl;
+                document.body.appendChild(img);
+            })
+            .catch(function (error) {
+                console.error('oops, something went wrong!', error);
+            });
+    }
+</script>
