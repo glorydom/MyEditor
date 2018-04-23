@@ -1,7 +1,12 @@
+//一键排版
+
 $(function () {
     var parseListUrl = "http://www.135editor.com/html_parsers/lists";
     $.get(parseListUrl).then(function (data) {
         var parseLists = $(data).find("#tpl-tab-content");
+        parseLists.find(".appmsg.clearfix.html-parser-rule").each(function(){
+            $(this).addClass("TypesettingStyle");
+        });
         var parseContainer = $("<div></div>").append(parseLists);
         $("#html-parsers-items").html(parseContainer.html());
 

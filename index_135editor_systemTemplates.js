@@ -30,10 +30,11 @@ $(function () {
 
         var cover = $("<div></div>").css("background-color", "gray")
             .css("position", "absolute")
-            .css("top", "70px")
+            .css("top", "0px")
             .css("z-index", 1)
+            .addClass("btn-group-vertical")
             .addClass("cover");
-        var miaoshua = $("<button class='btn'>秒刷</button>")
+        var miaoshua = $("<button class='btn btn-default btn-lg' style='margin-bottom:10px; margin-top:40px;'></button>")
             .css("margin-right", "10px")
             .on("click", function () {
                 var templateContainer = $("<div class='pre-scrollable' style='padding:2px;max-height:700px'></div>")
@@ -71,8 +72,8 @@ $(function () {
 
                 $('#systemTemplates').append(templateContainer);
             });
-        var charu = $("<button class='btn'></button>")
-            .text("插入")
+            
+        var charu = $("<button class='btn btn-default btn-lg' style='margin-top:10px;'></button>")
             .on("click", function () {
                 var ue = UE.getEditor('editor');
                 var range = ue.selection.getRange();
@@ -85,6 +86,11 @@ $(function () {
                 });
             });
 
+        //给秒刷 插入按钮添加个icon 美化按钮
+        var icon_miaoshua = $("<span class='glyphicon glyphicon-edit' aria-hidden='true'>秒刷</span>")
+        var icon_charu = $("<span class='glyphicon glyphicon-log-in' aria-hidden='true'>插入</span>")
+        miaoshua.append(icon_miaoshua);
+        charu.append(icon_charu);
         cover.append(miaoshua);
         cover.append(charu);
         $(this).append(cover);

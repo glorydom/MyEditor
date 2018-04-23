@@ -87,3 +87,22 @@ html, body, .container, .container>.row {
     text-align: center;
     max-width: 100%;
 }
+
+#html-parsers-items .appmsg {
+    box-shadow: 0 0 3px rgb(170, 170, 170);
+    margin: 10px 0;
+    margin-left:2px;
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+.TypesettingStyle{
+    min-height: 270px;
+}
+
+.cover {
+    width:100%;
+    height:100%;
+    padding: 20px;
+    opacity:0.8;
+}
