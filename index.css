@@ -125,3 +125,17 @@ body {
     border: 2px dashed #f3e9f3;
     max-width: 100%;
 }
+
+.personalTempContainer {
+    height: 300px;
+}
+
+.del {
+    position: absolute;
+    left:100px;
+
+}
+.glyphicon-trash{
+    font-size: 15px;
+    color: rgb(42, 107, 230);
+}
