@@ -36,7 +36,7 @@
                                 <a href="#htmlParsersList" aria-controls="htmlParsersList" role="tab" data-toggle="tab">一键排版</a>
                             </li>
                             <li role="presentation">
-                                <a href="#systemTemplates" aria-controls="systemTemplates" role="tab" data-toggle="tab">模版</a>
+                                <a href="#editor-tpls" aria-controls="editor-tpls" role="tab" data-toggle="tab">模版</a>
                             </li>
                         </ul>
                     </div>
@@ -238,12 +238,37 @@
                                         <strong style="color:red;">提示：</strong>① 在编辑器中粘贴或者输入所有内容，② 点击对应的一键排版规则,③ 全文内容实现自动排版</p>
                                 </div>
 
-                                
+
                                 <div id="html-parsers-items">
 
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane pre-scrollable" id="systemTemplates" style="max-height:700px;"></div>
+                            <div role="tabpanel" class="tab-pane" id="editor-tpls" style="max-height:700px;">
+                                <ul id="editor-tpls-navtab" class="nav nav-tabs" style="border:0 none;">
+                                    <li class="nav-item ignore col-sm-4 active" id="personal-tpl-list-li">
+                                        <a class="nav-link" href="#personalTemplates" data-refresh="always" data-url="/user_styles/myStyles" role="tab" data-toggle="tab"
+                                            aria-selected="true">个人模板</a>
+                                    </li>
+                                    <li class="nav-item ignore col-sm-4" id="favorite-tpl-list-li">
+                                        <a class="nav-link" href="#otherColleagueTemplates" data-refresh="always" data-url="/editor_styles/favorTemplates" role="tab"
+                                            data-toggle="tab" aria-selected="false">其他模板</a>
+                                    </li>
+                                    <li class="nav-item ignore  col-sm-4">
+                                        <a class="nav-link" href="#systemTemplates" data-url="/editor_styles/systemTemplates" role="tab" data-toggle="tab" aria-selected="false">系统模板</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" style="padding:0px;overflow-x:hidden;" id="tpl-tab-content">
+                                    <div id="personalTemplates" class="tab-pane active  pre-scrollable">
+                                        这是个人模板
+                                    </div>
+                                    <div id="otherColleagueTemplates" class="tab-pane  pre-scrollable">
+                                        这是其他模板
+                                    </div>
+                                    <div id="systemTemplates" class="tab-pane  pre-scrollable">
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
