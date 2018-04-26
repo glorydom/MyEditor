@@ -23,7 +23,7 @@ body {
 }
 
 .left-container #editor-tpls-navtab li.nav-item {
-   padding:0px;
+    padding: 0px;
 }
 
 .right-container {
@@ -132,10 +132,27 @@ body {
 
 .del {
     position: absolute;
-    left:100px;
-
+    left: 100px;
 }
-.glyphicon-trash{
+
+.glyphicon-trash {
     font-size: 15px;
     color: rgb(42, 107, 230);
+}
+
+.editorslide {
+    /* position: absolute;
+    right: -80px;
+    width: 80px; */
+    bottom: initial;
+    top: 150px;
+}
+
+.editorslide ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.editorslide ul li {
+    list-style: none;
 }
